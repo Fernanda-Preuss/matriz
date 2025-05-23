@@ -1,106 +1,107 @@
-🔐 Criptografia com Matrizes
-Sistema de criptografia e descriptografia usando multiplicação matricial em Python.
-📋 Descrição
-Este programa implementa uma cifra baseada em matrizes matemáticas, onde o texto é convertido em números e criptografado através de operações matriciais modulares. A segurança é baseada na dificuldade de descobrir a matriz chave sem conhecimento prévio.
-⚙️ Como Funciona
 
-Conversão: Texto → Números (baseado no alfabeto)
-Agrupamento: Números organizados em pares
-Criptografia: Multiplicação pela matriz chave 2×2
-Operação Modular: Resultado módulo tamanho do alfabeto
-Conversão: Números → Texto criptografado
+# 🔐 Criptografia com Matrizes
 
-🛠️ Tecnologias
+Um sistema simples de criptografia e descriptografia usando **álgebra linear** com matrizes e o módulo `numpy`.  
+Baseado na ideia do **Hill Cipher**, este projeto transforma texto em números, aplica operações matriciais, e retorna o texto codificado.
 
-Python 3.x
-NumPy - Operações matriciais
-OS - Limpeza de tela
+---
 
-🚀 Instalação
-bash# Clone ou baixe o arquivo
-# Instale o NumPy
+## 🚀 Funcionalidades
+
+- Criptografa e descriptografa textos usando uma matriz chave
+- Sistema de menu simples no terminal
+- Suporte a letras, números e pontuação básica
+- Compatível com Windows, Linux e MacOS
+
+---
+
+## 📦 Requisitos
+
+- Python 3.10+
+- `numpy`
+
+Instale com:
+
+```bash
 pip install numpy
+```
 
-# Execute o programa
-python criptografia_matriz.py
-💻 Como Usar
+---
 
-Execute o programa
-Escolha uma opção no menu:
+## ⚙️ Como rodar
 
-1 - Criptografar texto
-2 - Descriptografar texto
+### 1. Clone ou baixe o projeto
+
+```bash
+git clone https://github.com/seu-usuario/criptografia-matriz.git
+cd criptografia-matriz
+```
+
+### 2. (Opcional) Crie e ative um ambiente virtual
+
+```bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+```
+
+### 3. Rode o script
+
+```bash
+python matriz.py
+```
+
+---
+
+## 🖥️ Menu do programa
+
+```
+=== CRIPTOGRAFIA COM MATRIZES ===
+1 - Criptografar
+2 - Descriptografar
 3 - Sair
+```
 
+---
 
-Digite o texto desejado
-Veja o resultado na tela
+## 🧠 Como funciona?
 
-📊 Exemplo de Uso
-Texto original: "Ola mundo!"
-Texto criptografado: "X7k#mZ@1"
-Texto descriptografado: "Ola mundo!"
-🔧 Características Técnicas
-Matriz Chave
-[3  2]
-[5  7]
-Alfabeto Suportado
+- Usa uma **matriz 2x2 como chave** para encriptar pares de caracteres.
+- Cada caractere é convertido em um número com base em um alfabeto customizado.
+- Usa a **inversa modular da matriz** para descriptografar.
+- O texto é processado em pares; se o número de caracteres for ímpar, um espaço é adicionado.
 
-Letras minúsculas (a-z)
-Letras maiúsculas (A-Z)
-Números (0-9)
-Símbolos: espaço, ponto, vírgula, exclamação, interrogação, ponto e vírgula, dois pontos
+---
 
-Segurança
+## 🛠️ Arquivos
 
-Matriz Invertível: Determinante ≠ 0
-Aritmética Modular: Operações mod 68 (tamanho do alfabeto)
-Padding Automático: Adiciona espaço se texto tiver comprimento ímpar
+- `matriz.py`: script principal com toda a lógica de criptografia.
+- Alfabeto suportado:  
+  Letras maiúsculas e minúsculas, números, e caracteres: `. , ! ? ; :`
 
-🧮 Matemática Por Trás
-Criptografia
-[c1] = [3  2] × [p1] (mod 68)
-[c2]   [5  7]   [p2]
-Descriptografia
-[p1] = [inv_matrix] × [c1] (mod 68)
-[p2]                  [c2]
-Onde inv_matrix é a matriz inversa modular da chave.
-🔍 Estrutura do Código
-CriptografiaMatriz/
-├── __init__()                 # Inicializa alfabeto e matrizes
-├── _calcular_inversa_modular() # Calcula matriz inversa
-├── _inverso_modular()         # Algoritmo euclidiano estendido
-├── _texto_para_numeros()      # Converte texto → números
-├── _numeros_para_texto()      # Converte números → texto
-├── _preparar_texto()          # Adiciona padding se necessário
-├── criptografar()             # Função principal de criptografia
-└── descriptografar()          # Função principal de descriptografia
-⚠️ Limitações
+---
 
-Matriz Fixa: Usa sempre a mesma matriz chave
-Alfabeto Limitado: Caracteres não suportados viram espaço
-Segurança Básica: Para fins educacionais
-Padding Visível: Pode adicionar espaço extra no final
+## 🔐 Segurança
 
-🎓 Uso Educacional
-Ideal para aprender sobre:
+Esse sistema é **educacional** e não deve ser usado para proteger dados reais.  
+Serve como uma ótima introdução à criptografia com Python e matrizes!
 
-Álgebra linear aplicada
-Criptografia clássica
-Aritmética modular
-Operações matriciais
-Programação em Python
+---
 
-🤝 Melhorias Possíveis
+## 🤝 Contribuição
 
- Matriz chave configurável
- Suporte a matrizes maiores (3×3, 4×4)
- Interface gráfica
- Múltiplos alfabetos
- Análise de frequência
- Testes automatizados
+Sinta-se à vontade para fazer um fork, abrir PRs ou sugerir melhorias.
 
-📄 Licença
-Código livre para uso educacional e pessoal.
+---
 
-Desenvolvido para fins educacionais - Criptografia com Matrizes 🔐
+## 📜 Licença
+
+Este projeto é livre para uso e modificação. Sem frescura. Só não vai usar pra coisa errada. 😅
+
+---
+
+## ✍️ Autor
+
+Feito por [Seu Nome Aqui] com 🧠, `numpy` e umas boas ideias.
