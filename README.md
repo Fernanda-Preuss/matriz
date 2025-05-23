@@ -33,8 +33,7 @@ pip install numpy
 ### 1. Clone ou baixe o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/criptografia-matriz.git
-cd criptografia-matriz
+git clone https://github.com/Fernanda-Preuss/matriz.git
 ```
 
 ### 2. (Opcional) Crie e ative um ambiente virtual
@@ -80,28 +79,3 @@ python matriz.py
 - `matriz.py`: script principal com toda a lógica de criptografia.
 - Alfabeto suportado:  
   Letras maiúsculas e minúsculas, números, e caracteres: `. , ! ? ; :`
-
----
-
-## 🔐 Segurança
-
-Esse sistema é **educacional** e não deve ser usado para proteger dados reais.  
-Serve como uma ótima introdução à criptografia com Python e matrizes!
-
----
-
-## 🤝 Contribuição
-
-Sinta-se à vontade para fazer um fork, abrir PRs ou sugerir melhorias.
-
----
-
-## 📜 Licença
-
-Este projeto é livre para uso e modificação. Sem frescura. Só não vai usar pra coisa errada. 😅
-
----
-
-## ✍️ Autor
-
-Feito por [Seu Nome Aqui] com 🧠, `numpy` e umas boas ideias.
