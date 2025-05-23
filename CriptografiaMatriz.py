@@ -7,13 +7,13 @@ class CriptografiaMatriz:
         self.alfabeto = string.ascii_lowercase + string.ascii_uppercase + string.digits + " .,!?;:"
         self.tamanho_alfabeto = len(self.alfabeto)
         self.chave = np.array([[3, 2], [5, 7]], dtype=int)
-        self.chave_inversa = self._calcular_inversa_modular()
+        self.chave_inversa = self._calcular_inversa_transposta()
     
-    def _calcular_inversa_modular(self):
+    def _calcular_inversa_transposta(self):
         det = int(np.linalg.det(self.chave)) % self.tamanho_alfabeto
         det_inv = self._inverso_modular(det, self.tamanho_alfabeto)
-        adj = np.array([[self.chave[1,1], -self.chave[0,1]], [-self.chave[1,0], self.chave[0,0]]], dtype=int)
-        inversa = (det_inv * adj) % self.tamanho_alfabeto
+        trs = np.array([[self.chave[1,1], -self.chave[0,1]], [-self.chave[1,0], self.chave[0,0]]], dtype=int)
+        inversa = (det_inv * trs) % self.tamanho_alfabeto
         return inversa
     
     def _inverso_modular(self, a, m):
